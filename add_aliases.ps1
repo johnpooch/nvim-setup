@@ -1,0 +1,2 @@
+Get-ChildItem "$profile" -File | Where{!(Select-String -SimpleMatch "New-Alias vim nvim" -Path $_.fullname -Quiet)} | ForEach{ $Path = $_.FullName; "New-Alias vim nvim",(Get-Content $Path)|Set-Content $Path }
+Get-ChildItem "$profile" -File | Where{!(Select-String -SimpleMatch "New-Alias vi nvim" -Path $_.fullname -Quiet)} | ForEach{ $Path = $_.FullName; "New-Alias vi nvim",(Get-Content $Path)|Set-Content $Path }
